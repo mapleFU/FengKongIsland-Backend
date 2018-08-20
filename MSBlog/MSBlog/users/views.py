@@ -1,3 +1,6 @@
+from hashlib import md5
+import uuid
+
 from django.conf import settings
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -30,6 +33,12 @@ class UserCreateViewSet(mixins.CreateModelMixin,
     permission_classes = (AllowAny,)
 
 
+def _gen_filename(username: str, filename: str) -> str:
+    filename = "{}{}".format(uuid.uuid4(), filename)
+    return f"image/{md5(username).hexdigest()}:" \
+           f"{md5(filename)}"
+
+
 @api_view(["POST"])
 @permission_classes((IsAuthenticated,))
 def get_upload_token(request):
@@ -41,9 +50,15 @@ def get_upload_token(request):
     file_name = request.data['file-name']
     auth = getattr(settings, "QINIU_AUTH", None)
     bucket_name = getattr(settings, "BUCKET_NAME", None)
-    token = auth.upload_token(file_name, bucket_name)
+    username = request.user.username
+    key = _gen_filename(username, file_name)
+    policy = {
+        "mimeLimit": "image/*",
+    }
+    token = auth.upload_token(bucket_name, key, 3600, policy=policy)
     return Response({
         'upload-token': token,
+        'key': key,
     }, 200)
 
 
