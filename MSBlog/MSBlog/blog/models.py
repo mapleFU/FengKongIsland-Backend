@@ -34,6 +34,8 @@ class Post(TimeStampModel):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # 阅读量
     reading = models.IntegerField(default=0)
+    # 目录
+    directory = models.ForeignKey('Directory', on_delete=models.SET_NULL, null=True)
 
 
 class Comment(models.Model):
@@ -47,5 +49,7 @@ class Directory(models.Model):
     """
     文章所在的目录
     """
-    pass
+    name = models.CharField(max_length=20, db_index=True, null=False)
+    # 父目录
+    father_directory = models.ForeignKey('self', null=True, on_delete=models.SET_NULL)
 
