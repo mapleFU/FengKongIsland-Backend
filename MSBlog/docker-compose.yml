@@ -6,7 +6,7 @@ services:
   web:
     restart: always
     environment:
-      - DJANGO_SECRET_KEY=local
+      - DJANGO_SECRET_KEY=production
     image: web
     build: ./
     command: >

@@ -3,6 +3,9 @@ from os.path import join
 from distutils.util import strtobool
 import dj_database_url
 from configurations import Configuration
+
+from qiniu import Auth
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -24,7 +27,7 @@ class Common(Configuration):
 
         # Your apps
         'MSBlog.users',
-
+        'MSBlog.blog',
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
@@ -53,20 +56,24 @@ class Common(Configuration):
     # Postgres
     DATABASES = {
         'default': dj_database_url.config(
-            default='postgres://postgres:@localhost:5432/postgres',
+            default='postgres://postgres:@localhost:5432/msblog',
             conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
         )
     }
 
     # General
     APPEND_SLASH = False
-    TIME_ZONE = 'UTC'
-    LANGUAGE_CODE = 'en-us'
+    # Chinese Shanghai
+    LANGUAGE_CODE = 'zh-hans'
+    TIME_ZONE = 'Asia/Shanghai'
+    # db does not use utc time
+    USE_TZ = False
+
     # If you set this to False, Django will make some optimizations so as not
     # to load the internationalization machinery.
     USE_I18N = False
     USE_L10N = True
-    USE_TZ = True
+
     LOGIN_REDIRECT_URL = '/'
 
     # Static files (CSS, JavaScript, Images)
@@ -195,7 +202,24 @@ class Common(Configuration):
             'rest_framework.permissions.IsAuthenticated',
         ],
         'DEFAULT_AUTHENTICATION_CLASSES': (
+            # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
             'rest_framework.authentication.SessionAuthentication',
             'rest_framework.authentication.TokenAuthentication',
         )
     }
+
+    QINIU_ACCESS_KEY = os.environ.get("QINIU_ACCESS_KEY", '')
+    QINIU_SECRET_KEY = os.environ.get("QINIU_SECRET_KEY", '')
+    QINIU_BUCKET_NAME = os.environ.get("QINIU_BUCKET_NAME", 'nmsltongjidbproject')
+    QINIU_BUCKET_DOMAIN = os.environ.get("QINIU_BUCKET_DOMAIN", "nmsl.maplewish.cn")
+
+    DEFAULT_PORTRAIT = "https://nmsl.maplewish.cn/msblog/images/portraits/default-portrait.png"
+
+    # PASSWORD_HASHERS = [
+    #     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    #     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    #     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    #     'django.contrib.auth.hashers.Argon2PasswordHasher',
+    # ]
+
+    QINIU_AUTH = Auth(QINIU_ACCESS_KEY, QINIU_SECRET_KEY)

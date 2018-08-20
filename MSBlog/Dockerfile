@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.6-alpine
 ENV PYTHONUNBUFFERED 1
 
 # Allows docker to cache installed dependencies between builds
@@ -9,8 +9,9 @@ ENV PYTHONUNBUFFERED 1
 COPY . code
 WORKDIR code
 
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pipenv &&
-    pipenv install --deploy &&
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pipenv && \
+    pip install --upgrade pip && \
+    pipenv install --system --deploy --ignore-pipfile
 
 
 EXPOSE 8000
