@@ -12,7 +12,7 @@ from django.conf import settings
 @python_2_unicode_compatible
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    # # 头像
+    # 头像
     portrait_url = models.URLField(default=getattr(settings, "DEFAULT_PORTRAIT"))
 
     def validate_portrait_url(self, url: str) -> bool:
@@ -20,9 +20,6 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
-
-    # class Meta:
-    #     exclude = ('first_name', 'last_name', )
 
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)

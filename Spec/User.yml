@@ -1,0 +1,41 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: maplewish.cn
+info:
+  description: Api for mwish blog
+  version: "1.0.0"
+  title: blog wish api
+  contact:
+    email: 1506118561@qq.com
+  license:
+    name: BSD
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: admins
+    description: Secured Admin-only calls
+  - name: visitor
+    description: the user who has registered in the system
+  - name: anonymous
+    description: Operations available to regular developers
+
+paths:
+    /api-token-auth:
+      post:
+        summary: 登陆
+        operationId: 1
+        parameters:
+          - in: body
+            name: username
+            type: string
+            description: 用户名称
+            example: 风空之枫
+          - in: body
+            name: password
+            type: string
+            description: 用户密码
+        responses:
+          '200':
+            description:
+

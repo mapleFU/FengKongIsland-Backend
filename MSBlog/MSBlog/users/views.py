@@ -35,8 +35,8 @@ class UserCreateViewSet(mixins.CreateModelMixin,
 
 def _gen_filename(username: str, filename: str) -> str:
     filename = "{}{}".format(uuid.uuid4(), filename)
-    return f"image/{md5(username).hexdigest()}:" \
-           f"{md5(filename)}"
+    return f"image/{md5(username.encode('utf-8')).hexdigest()}:" \
+           f"{md5(filename.encode('utf-8')).hexdigest()}"
 
 
 @api_view(["POST"])
@@ -49,7 +49,7 @@ def get_upload_token(request):
     """
     file_name = request.data['file-name']
     auth = getattr(settings, "QINIU_AUTH", None)
-    bucket_name = getattr(settings, "BUCKET_NAME", None)
+    bucket_name = getattr(settings, "QINIU_BUCKET_NAME", None)
     username = request.user.username
     key = _gen_filename(username, file_name)
     policy = {
