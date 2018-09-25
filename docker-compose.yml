@@ -6,9 +6,12 @@ services:
   web:
     restart: always
     environment:
-      - DJANGO_SECRET_KEY=production
+      - DJANGO_CONFIGURATION=Production
+      - DJANGO_SETTINGS_MODULE=MSBlog.config
+    env_file:
+      - deploy.env
     image: web
-    build: ./
+    build: .
     command: >
       bash -c "python wait_for_postgres.py &&
                ./manage.py migrate &&
@@ -19,11 +22,11 @@ services:
       - "8000:8000"
     depends_on:
       - postgres
-  documentation:
-    restart: always
-    build: ./
-    command: "mkdocs serve"
-    volumes:
-      - ./:/code
-    ports:
-      - "8001:8001"
+#  documentation:
+#    restart: always
+#    build: .
+#    command: "mkdocs serve"
+#    volumes:
+#      - ./:/code
+#    ports:
+#      - "8001:8001"

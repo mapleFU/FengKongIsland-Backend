@@ -27,7 +27,7 @@ paths:
         operationId: 1
         parameters:
           - in: body
-            name: username
+            name: usernamepytho
             type: string
             description: 用户名称
             example: 风空之枫

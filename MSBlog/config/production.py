@@ -14,19 +14,23 @@ class Production(Common):
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/2.0/howto/static-files/
     # http://django-storages.readthedocs.org/en/latest/index.html
-    INSTALLED_APPS += ('storages',)
+    # INSTALLED_APPS += ('storages',)
 
     # Postgres
+    # Postgres
     DATABASES = {
-        'default': dj_database_url.config(
-            default='postgres://postgres:@localhost:5432/postgres',
-            conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
-        )
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'HOST': 'postgres',
+            'PORT': 5432,
+        }
     }
 
     # https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control
     # Response can be cached by browser and any intermediary caches (i.e. it is "public") for up to 1 day
     # 86400 = (60 seconds x 60 minutes x 24 hours)
-    AWS_HEADERS = {
-        'Cache-Control': 'max-age=86400, s-maxage=86400, must-revalidate',
-    }
+    # AWS_HEADERS = {
+    #     'Cache-Control': 'max-age=86400, s-maxage=86400, must-revalidate',
+    # }

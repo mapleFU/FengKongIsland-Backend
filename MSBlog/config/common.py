@@ -53,13 +53,7 @@ class Common(Configuration):
         ('Author', '1506118561@qq.com'),
     )
 
-    # Postgres
-    DATABASES = {
-        'default': dj_database_url.config(
-            default='postgres://postgres:@localhost:5432/msblog',
-            conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
-        )
-    }
+
 
     # General
     APPEND_SLASH = False
@@ -221,5 +215,4 @@ class Common(Configuration):
     #     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
     #     'django.contrib.auth.hashers.Argon2PasswordHasher',
     # ]
-
     QINIU_AUTH = Auth(QINIU_ACCESS_KEY, QINIU_SECRET_KEY)

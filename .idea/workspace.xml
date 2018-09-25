@@ -2,20 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c8f728-832e-41de-9024-50fc77e70f08" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MSBlog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MSBlog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0002_auto_20180821_0042.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0003_auto_20180821_1008.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0004_auto_20180821_1702.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0005_auto_20180821_1812.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0006_auto_20180822_1406.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0007_auto_20180822_1706.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSBlog/MSBlog/blog/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSBlog/MSBlog/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/migrations/0002_auto_20171227_2246.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/migrations/0003_auto_20180815_2340.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/migrations/0004_auto_20180816_0037.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/migrations/0005_user_portrait_url.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/.coveragerc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/Pipfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0002_auto_20180823_0110.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/blog/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/common_tools/permissions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/config/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/config/common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/config/local.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/config/production.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/permissions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/test/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/test/factories.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/test/test_serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/test/test_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/users/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/MSBlog/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/Pipfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/docs/api/authentication.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/docs/api/users.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/docs/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/mkdocs.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/setup.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSBlog/wait_for_postgres.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spec/User.yml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,47 +72,61 @@
     <session id="-1202917352">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Dockerfile" value="1" />
-          <entry key="Pipfile" value="2" />
+          <entry key="Dockerfile" value="2" />
+          <entry key="Pipfile" value="5" />
           <entry key="cfg" value="1" />
           <entry key="dockerignore" value="1" />
-          <entry key="lock" value="2" />
-          <entry key="py" value="30" />
+          <entry key="env" value="1" />
+          <entry key="gitignore" value="1" />
+          <entry key="lock" value="4" />
+          <entry key="py" value="44" />
           <entry key="txt" value="1" />
-          <entry key="yml" value="4" />
+          <entry key="yml" value="9" />
           <entry key="zshrc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dockerfile" value="1" />
+          <entry key="Dockerfile" value="2" />
+          <entry key="Git file" value="1" />
           <entry key="Ini" value="1" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="30" />
-          <entry key="TOML file" value="1" />
-          <entry key="YAML" value="4" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="Python" value="44" />
+          <entry key="TOML file" value="4" />
+          <entry key="YAML" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3822" />
-          <entry key="yml" value="278" />
+          <entry key="Dockerfile" value="24" />
+          <entry key="Pipfile" value="1" />
+          <entry key="env" value="45" />
+          <entry key="gitignore" value="7" />
+          <entry key="py" value="6689" />
+          <entry key="yml" value="434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3822" />
-          <entry key="YAML" value="278" />
+          <entry key="Dockerfile" value="24" />
+          <entry key="Git file" value="7" />
+          <entry key="PLAIN_TEXT" value="45" />
+          <entry key="Python" value="6689" />
+          <entry key="TOML file" value="1" />
+          <entry key="YAML" value="434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -79,54 +135,99 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/models.py">
+        <entry file="file://$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/configurations/importer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1534928757000" expanded="true" signature="1197:1344" ph="..." />
-              </folding>
+            <state relative-caret-position="2840">
+              <caret line="153" selection-start-line="153" selection-end-line="153" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/django/core/management/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6000">
+              <caret line="316" selection-start-line="316" selection-end-line="316" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSBlog/config/common.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="980">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/serializers.py">
+        <entry file="file://$PROJECT_DIR$/MSBlog/config/production.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="81" column="66" selection-start-line="81" selection-start-column="66" selection-end-line="81" selection-end-column="66" />
+            <state relative-caret-position="321">
+              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
-                <marker date="1534958035000" expanded="true" signature="584:964" ph="..." />
-                <marker date="1534958035000" expanded="true" signature="1013:1408" ph="..." />
-                <marker date="1534958035000" expanded="true" signature="1555:1979" ph="..." />
-                <marker date="1534958035000" expanded="true" signature="3110:3119" ph="..." />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/users/views.py">
+        <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+            <state relative-caret-position="200">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSBlog/config/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/users/serializers.py">
+        <entry file="file://$PROJECT_DIR$/MSBlog/config/local.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="420">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deploy.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -147,6 +248,13 @@
       <find>Logging</find>
       <find>split</find>
       <find>Directory</find>
+      <find>module</find>
+      <find>recursive</find>
+      <find>usr:</find>
+      <find>qiuniu</find>
+      <find>qiniu</find>
+      <find>Auth(</find>
+      <find>5432</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,15 +267,29 @@
         <option value="$PROJECT_DIR$/MSBlog/MSBlog/config/production.py" />
         <option value="$PROJECT_DIR$/MSBlog/docker-compose.yml" />
         <option value="$PROJECT_DIR$/MSBlog/MSBlog/users/serializers.py" />
-        <option value="$PROJECT_DIR$/Spec/User.yml" />
         <option value="$PROJECT_DIR$/MSBlog/MSBlog/users/views.py" />
         <option value="$PROJECT_DIR$/MSBlog/MSBlog/common_tools/permissions.py" />
         <option value="$PROJECT_DIR$/MSBlog/MSBlog/blog/__init__.py" />
         <option value="$PROJECT_DIR$/MSBlog/MSBlog/users/models.py" />
-        <option value="$PROJECT_DIR$/MSBlog/MSBlog/blog/models.py" />
         <option value="$PROJECT_DIR$/MSBlog/MSBlog/urls.py" />
-        <option value="$PROJECT_DIR$/MSBlog/MSBlog/blog/views.py" />
+        <option value="$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/configurations/importer.py" />
+        <option value="$PROJECT_DIR$/MSBlog/MSBlog/blog/models.py" />
         <option value="$PROJECT_DIR$/MSBlog/MSBlog/blog/serializers.py" />
+        <option value="$PROJECT_DIR$/MSBlog/MSBlog/blog/views.py" />
+        <option value="$PROJECT_DIR$/Spec/User.yml" />
+        <option value="$PROJECT_DIR$/MSBlog/Pipfile" />
+        <option value="$PROJECT_DIR$/MSBlog/Pipfile.lock" />
+        <option value="$PROJECT_DIR$/MSBlog/Dockerfile" />
+        <option value="$PROJECT_DIR$/MSBlog/.travis.yml" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/Pipfile" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/MSBlog/config/common.py" />
+        <option value="$PROJECT_DIR$/MSBlog/config/local.py" />
+        <option value="$PROJECT_DIR$/deploy.env" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/MSBlog/config/production.py" />
       </list>
     </option>
   </component>
@@ -197,47 +319,24 @@
             <path>
               <item name="MSBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MSBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MSBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
               <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MSBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
               <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
               <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="Spec" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -249,7 +348,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MSBlog/MSBlog" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/MSBlog" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -264,16 +372,19 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Python.DjangoServer" factoryName="Django server">
+    <configuration name="MSBlog-Debug" type="Python.DjangoServer" factoryName="Django server">
       <module name="MSBlog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name=" SECRET_KEY" value="wish-blog" />
+        <env name="QINIU_SECRET_KEY" value="MAgFx6Q9PLLXRBuYu79rVkv7Lgi8LoFUZYwqPzjd" />
+        <env name="QINIU_ACCESS_KEY" value="X4pHLlBJDRBSCEyWZ0Lfmbx_aftvCbRUVnsW-zDp" />
+        <env name="DJANGO_SECRET_KEY" value="adskjfalklfsajf.sKJDASB" />
+        <env name="DJANGO_SETTINGS_MODULE" value="MSBlog.config.local" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MSBlog/MSBlog" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MSBlog" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -304,22 +415,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3104435" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23962805" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49713877" weight="0.32871288" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49713877" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2879518" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49499285" visible="true" weight="0.36385542" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5028612" side_tool="true" weight="0.34819278" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -336,10 +446,18 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/msblog/README.rst" />
-    <entry file="file://$PROJECT_DIR$/msblog/pytest.ini" />
-    <entry file="file://$PROJECT_DIR$/msblog/merge_production_dotenvs_in_dotenv.py" />
     <entry file="file://$PROJECT_DIR$/msblog/docs/docker_ec2.rst" />
     <entry file="file://$PROJECT_DIR$/msblog/locale/README.rst" />
     <entry file="file://$USER_HOME$/.zshrc">
@@ -349,64 +467,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/MSBlog/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/setup.cfg">
+    <entry file="file://$PROJECT_DIR$/setup.cfg">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/.dockerignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/.dockerignore">
+    <entry file="file://$PROJECT_DIR$/MSBlog/blog/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/config/production.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pipfile.lock">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/mkdocs.yml">
+    <entry file="file://$PROJECT_DIR$/mkdocs.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/helpers.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/helpers.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pipfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/apps.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/blog/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/qiniu/auth.py">
@@ -416,74 +499,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spec/User.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/users/permissions.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/users/permissions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" lean-forward="true" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/common_tools/permissions.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/common_tools/permissions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/config/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2580">
-          <caret line="129" column="13" selection-start-line="129" selection-start-column="6" selection-end-line="129" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/__init__.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/blog/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#22#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/users/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1534926823000" expanded="true" signature="638:657" ph="..." />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/rest_framework/generics.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -506,84 +544,197 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/views.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0007_auto_20180822_1706.py" />
+    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0006_auto_20180822_1406.py" />
+    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0005_auto_20180821_1812.py" />
+    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0004_auto_20180821_1702.py" />
+    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0003_auto_20180821_1008.py" />
+    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0002_auto_20180821_0042.py" />
+    <entry file="file://$PROJECT_DIR$/MSBlog/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1534952190000" expanded="true" signature="716:721" ph="..." />
-            <marker date="1534952190000" expanded="true" signature="1080:1081" ph="..." />
-          </folding>
+        <state relative-caret-position="160">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/tests.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/blog/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="67" column="77" selection-start-line="67" selection-start-column="77" selection-end-line="67" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/blog/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="52" column="75" selection-start-line="52" selection-start-column="75" selection-end-line="52" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/rest_framework/relations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8920">
+          <caret line="466" column="8" selection-start-line="466" selection-start-column="8" selection-end-line="466" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/blog/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/blog/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/users/views.py">
+    <entry file="file://$PROJECT_DIR$/MSBlog/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
+        <state relative-caret-position="800">
           <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/users/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/Pipfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rest/User.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1229">
+          <caret line="231" column="21" selection-start-line="231" selection-start-column="16" selection-end-line="231" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wait_for_postgres.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/django/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/configurations/importer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2840">
+          <caret line="153" selection-start-line="153" selection-end-line="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/MSBlog-leLErouq/lib/python3.7/site-packages/django/core/management/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6000">
+          <caret line="316" selection-start-line="316" selection-end-line="316" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/config/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/users/serializers.py">
+    <entry file="file://$PROJECT_DIR$/deploy.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="40">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/config/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0007_auto_20180822_1706.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0006_auto_20180822_1406.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0005_auto_20180821_1812.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0004_auto_20180821_1702.py">
+    <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0003_auto_20180821_1008.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/migrations/0002_auto_20180821_0042.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1534928757000" expanded="true" signature="1197:1344" ph="..." />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSBlog/MSBlog/blog/serializers.py">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="81" column="66" selection-start-line="81" selection-start-column="66" selection-end-line="81" selection-end-column="66" />
+        <state relative-caret-position="180">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSBlog/config/production.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1534958035000" expanded="true" signature="584:964" ph="..." />
-            <marker date="1534958035000" expanded="true" signature="1013:1408" ph="..." />
-            <marker date="1534958035000" expanded="true" signature="1555:1979" ph="..." />
-            <marker date="1534958035000" expanded="true" signature="3110:3119" ph="..." />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.6
 ENV PYTHONUNBUFFERED 1
 
 # Allows docker to cache installed dependencies between builds
@@ -20,3 +20,4 @@ EXPOSE 8000
 CMD ./manage.py migrate && \
     ./manage.py collectstatic --noinput && \
     newrelic-admin run-program gunicorn --bind 0.0.0.0:$PORT --access-logfile - MSBlog.wsgi:application
+
