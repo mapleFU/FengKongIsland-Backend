@@ -66,4 +66,3 @@ class Directory(models.Model):
     # 父目录
     father_directory = models.ForeignKey('self', related_name='child_directories',
                                          null=True, on_delete=models.SET_NULL)
-

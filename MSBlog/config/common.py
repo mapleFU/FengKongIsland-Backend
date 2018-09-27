@@ -1,7 +1,6 @@
 import os
 from os.path import join
 from distutils.util import strtobool
-import dj_database_url
 from configurations import Configuration
 
 from qiniu import Auth
@@ -52,8 +51,6 @@ class Common(Configuration):
     ADMINS = (
         ('Author', '1506118561@qq.com'),
     )
-
-
 
     # General
     APPEND_SLASH = False

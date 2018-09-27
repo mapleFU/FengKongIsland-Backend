@@ -1,6 +1,5 @@
 import os
 from .common import Common
-import dj_database_url
 
 
 class Production(Common):

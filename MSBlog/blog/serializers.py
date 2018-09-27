@@ -1,15 +1,15 @@
-import typing
+# import typing
 
 from .models import Post, Tag, Directory, User
-from . import logger
+# from . import logger
 
-from django.db.models import Q
+# from django.db.models import Q
 from rest_framework import serializers
-from rest_framework_recursive.fields import RecursiveField
-from rest_framework.decorators import action, detail_route
+# from rest_framework_recursive.fields import RecursiveField
+# from rest_framework.decorators import action, detail_route
 
-if typing.TYPE_CHECKING:
-    from rest_framework.serializers import BaseSerializer, ModelSerializer
+# if typing.TYPE_CHECKING:
+#     from rest_framework.serializers import BaseSerializer
 
 
 def handle_embeds(serializer, request, keyword: str, serialize_cls: 'BaseSerializer',
@@ -66,8 +66,8 @@ class PostSerializer(serializers.ModelSerializer):
             # TODO: add validation for this field.
             # self.validators.append()
             self.fields['directory'] = \
-                serializers.SlugRelatedField(slug_field='id', queryset=
-                Directory.objects, allow_null=True, required=False)
+                serializers.SlugRelatedField(slug_field='id', queryset=Directory.objects,
+                                             allow_null=True, required=False)
 
     class Meta:
         model = Post
@@ -104,8 +104,8 @@ class DirectorySerializer(serializers.ModelSerializer):
             # TODO: add validation for this field.
             # self.validators.append()
             self.fields['father_directory'] = \
-                serializers.SlugRelatedField(slug_field='uuid', queryset=
-                Directory.objects, allow_null=True, required=False)
+                serializers.SlugRelatedField(slug_field='uuid', queryset=Directory.objects,
+                                             allow_null=True, required=False)
 
     class Meta:
         model = Directory

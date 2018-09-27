@@ -69,5 +69,3 @@ def upload_user_portrait(request):
     用户上传更新自身的头像
     """
     pass
-
-

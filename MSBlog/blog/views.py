@@ -1,10 +1,9 @@
 from typing import TYPE_CHECKING
 import itertools
 
-from django.shortcuts import render
-from rest_framework import viewsets, serializers, status
+from rest_framework import viewsets, status
 from rest_framework.mixins import CreateModelMixin, RetrieveModelMixin, \
-    ListModelMixin, UpdateModelMixin, DestroyModelMixin
+    ListModelMixin
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 
