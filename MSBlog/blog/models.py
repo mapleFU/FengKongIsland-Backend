@@ -22,6 +22,7 @@ class Tag(models.Model):
     # 表示标志了这个TAG的文章
     posts = models.ManyToManyField('Post', related_name='tags')
     tag_name = models.CharField(max_length=20, db_index=True, unique=True)
+    related_posts = models.IntegerField(default=0)
 
 
 class Post(TimeStampModel):

@@ -6,6 +6,10 @@ from rest_framework.mixins import CreateModelMixin, RetrieveModelMixin, \
     ListModelMixin
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
+from rest_framework.decorators import api_view, action
+from rest_framework.response import Response
+
+from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Post, Tag, Directory
 from .serializers import PostSerializer, TagSerializer, DirectorySerializer
@@ -34,19 +38,14 @@ class PostViewSet(viewsets.ModelViewSet):
         usr: User = request.user
         request.data['author'] = usr.id
         tag_names = request.data['tags']
-        tags = map(_get_tag_with_name, tag_names)
-
-        avail_tags, un_avail_names, un_avail_tags = list(), list(), None
-        for tag, t_name in zip(tags, tag_names):
-            if tag is None:
-                avail_tags.append(tag)
-            else:
-                un_avail_names.append(t_name)
-        un_avail_tags = (Tag(name) for name in tag_names)
-        Tag.objects.bulk_create(un_avail_tags)
-
-        request.data['tags']: List[Tag] = map(lambda t: t.uuid, itertools.chain(avail_tags, un_avail_tags))
-        Tag.objects.bulk_create(request.data['tags'])
+        for tag_name in tag_names:
+            cur_tag = Tag.objects.get(tag_name=tag_name)
+            if cur_tag is None:
+                # create a new tag
+                cur_tag = Tag(tag_name=tag_name)
+            cur_tag.related_posts += 1
+            # wtf?
+            cur_tag.save()
         request.data['tags'] = None
         return super(PostViewSet, self).create(request, *args, **kwargs)
 
@@ -69,6 +68,8 @@ class TagReadViewSet(viewsets.GenericViewSet, RetrieveModelMixin, ListModelMixin
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
     permission_classes = (AllowAny, )
+    filter_backends = (DjangoFilterBackend,)
+    filterset_fields = ('tag_name',)
 
     def get_serializer_context(self):
         context = super().get_serializer_context()
@@ -93,8 +94,26 @@ class DirectoryViewSet(viewsets.GenericViewSet, ListModelMixin, RetrieveModelMix
     serializer_class = DirectorySerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
+    @action(methods=['GET'], detail=True)
+    def get_child_dirs(self, request, pk=None):
+        print(pk)
+        dir: Directory = self.queryset.get(pk=pk)
+        serializer = DirectorySerializer(dir.child_directories, many=True)
+        return Response(serializer.data)
+
     def get_serializer_context(self):
         context = super().get_serializer_context()
         # 注入 request 属性
         context['request'] = self.request
         return context
+
+
+@api_view(['GET'])
+def get_root_directories(request):
+    """
+    获取所有没有父对象的目录
+    :return:
+    """
+    objects = Directory.objects.filter(father_directory__isnull=True)
+    serializer = DirectorySerializer(objects, many=True)
+    return Response(serializer.data)

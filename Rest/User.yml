@@ -39,3 +39,33 @@ paths:
           '200':
             description:
 
+    /tags:
+      get:
+        summary: 获得 Tag 的信息
+        operationId: 2
+        parameters:
+          - in: query
+            name: pn
+            description: 指定分页
+            example: 15
+        responses:
+          200:
+            description: OK
+      post:
+        summary: 客户端添加 tag
+        operationId: 3
+        parameters:
+          - name: Authorization
+            in: header
+            description: basic authorization
+
+        responses:
+
+    /posts:
+      get:
+        summary: 
+        operationId:
+        parameters:
+          -
+        responses:
+

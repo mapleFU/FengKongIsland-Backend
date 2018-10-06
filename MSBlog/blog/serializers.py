@@ -36,15 +36,15 @@ class TagSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(TagSerializer, self).__init__(*args, **kwargs)
-        request = kwargs['context']['request']
-
-        handle_embeds(self, request, 'post', PostSerializer, kwargs['context'],
-                      readonly=True, many=True)
+        # request = kwargs['context']['request']
+        # 应该是级联请求产生的
+        # handle_embeds(self, request, 'post', PostSerializer, kwargs['context'],
+        #               readonly=True, many=True)
 
     class Meta:
         model = Tag
-        fields = ('tag_name', 'uuid')
-        read_only_fields = ('uuid', )
+        fields = ('tag_name', 'uuid', 'related_posts')
+        read_only_fields = ('uuid', 'related_posts')
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -86,26 +86,31 @@ class DirectorySerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(DirectorySerializer, self).__init__(*args, **kwargs)
-        request = kwargs['context']['request']
-        if request.method == "GET":
-            # handle_embeds(self, request, 'father_directory', serializers.PrimaryKeyRelatedField,
-            #               kwargs['context'], readonly=True)
-            embed = request.query_params.get('embed', None)
-            if embed is None:
-                return
-            embeds = embed.replace(' ', '').split(',')
-            if 'father_directory' in embeds:
-                self.fields['father_directory'] = serializers.PrimaryKeyRelatedField(read_only=True)
-            if 'child_directories' in embeds:
-                self.fields['child_directories'] = serializers.SerializerMethodField(allow_null=True)
-            handle_embeds(self, request, 'posts', PostSerializer,
-                          kwargs['context'], readonly=True, many=True)
-        elif request.method == "POST":
-            # TODO: add validation for this field.
-            # self.validators.append()
-            self.fields['father_directory'] = \
-                serializers.SlugRelatedField(slug_field='uuid', queryset=Directory.objects,
-                                             allow_null=True, required=False)
+        try:
+            request = kwargs['context']['request']
+            if request.method == "GET":
+                # handle_embeds(self, request, 'father_directory', serializers.PrimaryKeyRelatedField,
+                #               kwargs['context'], readonly=True)
+                embed = request.query_params.get('embed', None)
+                if embed is None:
+                    return
+                embeds = embed.replace(' ', '').split(',')
+                if 'father_directory' in embeds:
+                    self.fields['father_directory'] = serializers.PrimaryKeyRelatedField(read_only=True)
+                if 'child_directories' in embeds:
+                    self.fields['child_directories'] = serializers.SerializerMethodField(allow_null=True)
+                handle_embeds(self, request, 'posts', PostSerializer,
+                              kwargs['context'], readonly=True, many=True)
+            elif request.method == "POST":
+                # TODO: add validation for this field.
+                # self.validators.append()
+                self.fields['father_directory'] = \
+                    serializers.SlugRelatedField(slug_field='uuid', queryset=Directory.objects,
+                                                 allow_null=True, required=False)
+        except KeyError as e:
+            print("no attr")
+        finally:
+            return
 
     class Meta:
         model = Directory
