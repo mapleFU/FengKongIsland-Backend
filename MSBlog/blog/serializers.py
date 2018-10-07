@@ -47,31 +47,65 @@ class TagSerializer(serializers.ModelSerializer):
         read_only_fields = ('uuid', 'related_posts')
 
 
-class PostSerializer(serializers.ModelSerializer):
-    author = serializers.SlugRelatedField(slug_field='id', queryset=User.objects.all(),
-                                          allow_null=False, required=True)
-    tags = serializers.SlugRelatedField(slug_field='uuid', read_only=True, allow_null=True)
-    # tags = serializers.ManyRelatedField()
-
-    def __init__(self, *args, **kwargs):
-        super(PostSerializer, self).__init__(*args, **kwargs)
-        request = kwargs['context']['request']
-
-        handle_embeds(self, request, 'tags', TagSerializer, kwargs['context'],
-                      readonly=True, many=True)
-        handle_embeds(self, request, 'directory', DirectorySerializer,
-                      kwargs['context'], readonly=True, many=True)
-
-        if request.method == "POST":
-            # TODO: add validation for this field.
-            # self.validators.append()
-            self.fields['directory'] = \
-                serializers.SlugRelatedField(slug_field='id', queryset=Directory.objects,
-                                             allow_null=True, required=False)
+# class PostSerializer(serializers.ModelSerializer):
+#     author = serializers.SlugRelatedField(slug_field='id', queryset=User.objects.all(),
+#                                           allow_null=False, required=True)
+#     tags = serializers.SlugRelatedField(slug_field='uuid', read_only=True, allow_null=True, many=True)
+#     # tags = serializers.ManyRelatedField()
+#
+#     def create(self, validated_data):
+#         print(validated_data)
+#         try:
+#             tags_data = validated_data.pop('tags')
+#             post = Post.objects.create(**validated_data)
+#             post.save()
+#             for tag_id in tags_data:
+#                 tag = Tag.objects.get(pk=tag_id)
+#                 tag.posts.add(post)
+#                 tag.save()
+#             return post
+#         except:
+#             return super(PostSerializer, self).create(validated_data)
+#
+#     def __init__(self, *args, **kwargs):
+#         super(PostSerializer, self).__init__(*args, **kwargs)
+#         request = kwargs['context']['request']
+#         # handle_embeds(self, request, 'tags', TagSerializer, kwargs['context'],
+#         #               readonly=True, many=True)
+#         handle_embeds(self, request, 'directory', DirectorySerializer,
+#                       kwargs['context'], readonly=True, many=True)
+#
+#         if request.method == "POST":
+#             # TODO: add validation for this field.
+#             # self.validators.append()
+#             self.fields['directory'] = \
+#                 serializers.SlugRelatedField(slug_field='uuid', queryset=Directory.objects,
+#                                              allow_null=True, required=False)
+#
+#     class Meta:
+#         model = Post
+#         fields = ('title', 'author', 'reading', 'tags', 'content')
+class PostListSerialize(serializers.ModelSerializer):
+    tags = TagSerializer(many=True, read_only=True)
+    # tags_id = serializers.UUIDField(write_only=True)
 
     class Meta:
         model = Post
-        fields = ('title', 'author', 'reading', 'tags')
+        fields = ('title', 'author', 'reading', 'tags', 'abstract', 'created_time', 'saved_time', 'uuid')
+
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ('title', 'author', 'reading', 'tags', 'content', 'abstract', 'created_time', 'saved_time', 'uuid')
+
+
+class PostViewSerializer(serializers.ModelSerializer):
+    tags = TagSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Post
+        fields = ('title', 'author', 'reading', 'tags', 'content', 'abstract', 'created_time', 'saved_time', 'uuid')
 
 
 class DirectorySerializer(serializers.ModelSerializer):

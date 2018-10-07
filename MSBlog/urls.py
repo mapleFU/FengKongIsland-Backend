@@ -7,7 +7,8 @@ from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 
 from .users.views import UserViewSet, UserCreateViewSet, get_upload_token
-from .blog.views import PostViewSet, TagCreateViewSet, TagReadViewSet, DirectoryViewSet, get_root_directories
+from .blog.views import PostViewSet, TagCreateViewSet, TagReadViewSet, DirectoryViewSet, \
+    get_root_directories, RelatedTagPostViewSet
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -30,4 +31,5 @@ urlpatterns = [
     # http://www.django-rest-framework.org/api-guide/routers/#defaultrouter
     re_path(r'^$', RedirectView.as_view(url=reverse_lazy('api-root'), permanent=False)),
     path(r'api/v1/root_directories/', get_root_directories),
+    re_path(r'api/v1/tags/(?P<tag_uuid>.+)/posts/$', RelatedTagPostViewSet.as_view({'get': 'list'})),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

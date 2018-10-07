@@ -22,6 +22,7 @@ class Tag(models.Model):
     # 表示标志了这个TAG的文章
     posts = models.ManyToManyField('Post', related_name='tags')
     tag_name = models.CharField(max_length=20, db_index=True, unique=True)
+    #count
     related_posts = models.IntegerField(default=0)
 
 
@@ -30,7 +31,7 @@ class Post(TimeStampModel):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # 标题, 可以考虑添加索引
     title = models.CharField(max_length=100)
-    # 文章的内容，属于文本内容
+    # 文章的内容，属于文本内容, 文本内容是 markdown
     content = models.TextField(null=False)
     # 作者
     author = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE)
@@ -38,6 +39,10 @@ class Post(TimeStampModel):
     reading = models.IntegerField(default=0)
     # 目录
     directory = models.ForeignKey('Directory', related_name='posts', on_delete=models.SET_NULL, null=True)
+    # 标签(已有)
+
+    # abstract, 文章的摘要
+    abstract = models.CharField(max_length=100, null=True, editable=True)
 
 
 class Comment(models.Model):
