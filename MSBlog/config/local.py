@@ -33,3 +33,10 @@ class Local(Common):
             conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
         )
     }
+
+    # local debug list
+    CORS_ORIGIN_WHITELIST = Common.CORS_ORIGIN_WHITELIST + (
+        'localhost:8081',
+        '127.0.0.1:8081',
+        '0.0.0.0:8081'
+    )
