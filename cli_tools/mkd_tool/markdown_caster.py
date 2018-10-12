@@ -1,33 +1,16 @@
 #!/usr/local/bin/python3
 
 import argparse
-import os
 import re
-import ntpath
 from concurrent import futures
 
-from QiniuUploader import upload
 
-parser = argparse.ArgumentParser(description='Process some markdown files')
+from .file_operations.filename_operations import filename_ext, file_exist, filename_without_ext, path_leaf
+from .qiniu_tools.QiniuUploader import upload
 
-parser.add_argument('files', metavar='N', type=str, nargs='+',
-                    help='input the ')
 
 LINE_RE = "(?:!\[(.*?)\]\((.*?)\))"
 line_regex = re.compile(LINE_RE)
-
-
-def path_leaf(path: str)->str:
-    head, tail = ntpath.split(path)
-    return tail or ntpath.basename(head)
-
-
-def filename_without_ext(path: str)-> str:
-    return os.path.splitext(path)[0]
-
-
-def filename_ext(path: str) -> str:
-    return os.path.splitext(path)[1]
 
 
 def process_file(file_name: str) -> bool:
@@ -36,7 +19,7 @@ def process_file(file_name: str) -> bool:
     :return:
     """
     print(f'filename: {file_name}')
-    if not os.path.isfile(file_name):
+    if not file_exist(file_name):
         raise FileNotFoundError(f"file {file_name} not exists in the system.")
     if not filename_ext(file_name) == 'md':
         raise Exception(f"file {file_name} is not a .md file.")
@@ -67,6 +50,11 @@ def process_file(file_name: str) -> bool:
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Process some markdown files')
+
+    parser.add_argument('files', metavar='N', type=str, nargs='+',
+                        help='input the ')
+
     args = parser.parse_args()
 
     with futures.ThreadPoolExecutor(max_workers=5) as executor:
