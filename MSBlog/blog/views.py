@@ -33,7 +33,7 @@ class PostViewSet(viewsets.ModelViewSet):
     """
     博客的VIEWSET
     """
-    queryset = Post.objects.all().order_by('created_time')
+    queryset = Post.objects.all().order_by('-created_time')
     serializer_class = PostSerializer
     permission_classes = (IsAuthenticatedOrReadOnly, )
     filter_backends = (DjangoFilterBackend,)
@@ -51,8 +51,8 @@ class PostViewSet(viewsets.ModelViewSet):
         request.data['author'] = usr.id
         tag_names = request.data['tags']
         tag_ids = []
-        # fill abstract data default
-        if getattr(request.data, 'abstract', None) is None:
+        print(request.data)
+        if 'abstract' not in request.data:
             request.data['abstract'] = request.data['content'][:50]
         for tag_name in tag_names:
             # cur_tag = get_object_or_404(Tag.objects, tag_name=tag_name)
@@ -101,7 +101,6 @@ class RelatedTagPostViewSet(viewsets.GenericViewSet, ListModelMixin):
             return tag.posts.all()
         except Tag.DoesNotExist:
             raise Http404
-
 
 
 class TagReadViewSet(viewsets.GenericViewSet, RetrieveModelMixin, ListModelMixin):
