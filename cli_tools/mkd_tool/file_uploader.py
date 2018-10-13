@@ -10,7 +10,7 @@ from markdown_caster import process_file
 import requests
 import markdown2
 
-remote_url = 'http://127.0.0.1:8000/api/v1/posts/'
+remote_url = 'http://maplewish.cn:8000/api/v1/posts/'
 
 # META_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)')
 
@@ -46,7 +46,7 @@ def upload_file(file_path: str):
         'Authorization': f'token {token}',
         'Content-Type': 'application/json'
     })
-    print(f'upload {title} done')
+    print(f'upload {title} done: {result}')
 
 
 if __name__ == '__main__':

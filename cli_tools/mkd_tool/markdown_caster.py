@@ -5,9 +5,9 @@ import re
 from concurrent import futures
 
 
-from .file_operations.filename_operations import filename_ext, file_exist, filename_without_ext, path_leaf
-from .qiniu_tools.QiniuUploader import upload
-from .file_cmd_parser import get_base_parser, exec_func
+from file_operations.filename_operations import filename_ext, file_exist, filename_without_ext, path_leaf
+from qiniu_tools.QiniuUploader import upload
+from file_cmd_parser import get_base_parser, exec_func
 
 
 LINE_RE = "(?:!\[(.*?)\]\((.*?)\))"
