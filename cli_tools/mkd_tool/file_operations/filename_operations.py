@@ -17,3 +17,7 @@ def filename_ext(path: str) -> str:
 
 def file_exist(path: str) -> str:
     os.path.isfile(path)
+
+
+def dir_path(path: str) -> str:
+    os.path.dirname(os.path.abspath(path))

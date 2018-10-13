@@ -1,17 +1,56 @@
-#!/usr/local/bin/python3
+#!/usr/local/bin/ python3
 
-import argparse
-from concurrent import futures
+import os
+import json
+
+from file_cmd_parser import get_base_parser, exec_func
+from file_operations.filename_operations import file_exist, filename_ext, path_leaf, filename_without_ext
+from markdown_caster import process_file
+
+import requests
+import markdown2
+
+remote_url = 'http://127.0.0.1:8000/api/v1/posts/'
+
+# META_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)')
+
+
+def upload_file(file_path: str):
+    print(f'filename: {file_path}')
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"file {file_path} not exists in the system.")
+    if not filename_ext(file_path) == '.md':
+        raise Exception(f"file {file_path} is not a .md file.")
+
+    token = os.environ.get('token')
+    print(f"sending {file_path}")
+    file_content = ''
+    with open(file_path, 'r', encoding='utf-8') as f:
+        file_content = f.read()
+
+    title = filename_without_ext(path_leaf(file_path))
+
+    meta = markdown2.markdown(file_content, extras=['metadata']).metadata
+    post_data = {
+        'title': meta['title'],
+        'content': file_content,
+        'tags': meta['tags'].split(' '),
+    }
+    if 'date' in meta:
+        post_data['created_time'] = meta['date']
+    elif 'abstract' in meta:
+        post_data['abstract'] = meta['abstract']
+    else:
+        post_data['abstract'] = ''
+    result = requests.post(remote_url, data=json.dumps(post_data), headers={
+        'Authorization': f'token {token}',
+        'Content-Type': 'application/json'
+    })
+    print(f'upload {title} done')
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Process some markdown files')
+    parser = get_base_parser()
 
-    parser.add_argument('files', metavar='N', type=str, nargs='+',
-                        help='input the ')
-
-    args = parser.parse_args()
-
-    with futures.ThreadPoolExecutor(max_workers=5) as executor:
-        pass
-
+    exec_func(parser, process_file)
+    exec_func(parser, upload_file)

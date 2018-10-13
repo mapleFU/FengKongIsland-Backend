@@ -7,6 +7,7 @@ from concurrent import futures
 
 from .file_operations.filename_operations import filename_ext, file_exist, filename_without_ext, path_leaf
 from .qiniu_tools.QiniuUploader import upload
+from .file_cmd_parser import get_base_parser, exec_func
 
 
 LINE_RE = "(?:!\[(.*?)\]\((.*?)\))"
@@ -47,24 +48,10 @@ def process_file(file_name: str) -> bool:
     print(f'the file has {cnt_line} lines, and {image_cnt} has image')
     with open(file_name, encoding='utf-8', mode='w') as fw:
         fw.write(new_text)
+    print(f' {file_name} markdown 成功转化为 七牛链接')
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Process some markdown files')
+    parser = get_base_parser()
 
-    parser.add_argument('files', metavar='N', type=str, nargs='+',
-                        help='input the ')
-
-    args = parser.parse_args()
-
-    with futures.ThreadPoolExecutor(max_workers=5) as executor:
-        # Start the load operations and mark each future with its URL
-        future_to_url = {executor.submit(process_file, file_name): file_name for file_name in args.files}
-        for future in futures.as_completed(future_to_url):
-            url = future_to_url[future]
-            try:
-                data = future.result()
-            except Exception as exc:
-                print('%r generated an exception: %s' % (url, exc))
-            else:
-                print('%r page is %d bytes' % (url, len(data)))
+    exec_func(parser, process_file)
