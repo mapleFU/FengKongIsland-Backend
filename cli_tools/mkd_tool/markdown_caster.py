@@ -22,7 +22,7 @@ def process_file(file_name: str) -> bool:
     print(f'filename: {file_name}')
     if not file_exist(file_name):
         raise FileNotFoundError(f"file {file_name} not exists in the system.")
-    if not filename_ext(file_name) == 'md':
+    if not filename_ext(file_name) == '.md':
         raise Exception(f"file {file_name} is not a .md file.")
     # get path leaf
     file_name_without_path = filename_without_ext(path_leaf(file_name))
@@ -40,6 +40,8 @@ def process_file(file_name: str) -> bool:
                 print(f'image_link: {image_link}')
                 if 'nmsl.maplewish.cn' not in image_link and 'http' not in image_link:
                     # new_file_name = f'blog:{file_name_without_path}:{path_leaf(image_link)}'
+                    f_name = file_name.replace(' ', '-')
+                    f_leaf = path_leaf(image_link).replace(' ', '-')
                     new_file_name = f'blog:{file_name}:{path_leaf(image_link)}'
                     upload(new_file_name, image_link)
 

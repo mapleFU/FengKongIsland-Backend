@@ -16,8 +16,18 @@ def filename_ext(path: str) -> str:
 
 
 def file_exist(path: str) -> str:
-    os.path.isfile(path)
+    return os.path.isfile(path)
 
 
 def dir_path(path: str) -> str:
     os.path.dirname(os.path.abspath(path))
+
+
+if __name__ == '__main__':
+    # test file_exists
+    print(file_exist("/Users/fuasahi/Desktop/writing/MapReduce.md"))
+    TEST_FILE = "/Users/fuasahi/Desktop/writing/MapReduce.md"
+    assert file_exist(TEST_FILE) is True
+
+    assert filename_ext(TEST_FILE) == '.md'
+    print(filename_without_ext(TEST_FILE))
