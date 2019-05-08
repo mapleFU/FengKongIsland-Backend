@@ -193,7 +193,8 @@ class Common(Configuration):
         'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
         # default pagination is 10
         'PAGE_SIZE': int(os.getenv('DJANGO_PAGINATION_LIMIT', 4)),
-        'DATETIME_FORMAT': '%Y-%m-%dT%H:%M:%S%z',
+        'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S%z',
+        'DATETIME_INPUT_FORMATS': ('%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%d %H:%M:%S'),
         'DEFAULT_RENDERER_CLASSES': (
             'rest_framework.renderers.JSONRenderer',
             'rest_framework.renderers.BrowsableAPIRenderer',

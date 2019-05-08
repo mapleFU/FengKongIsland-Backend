@@ -10,7 +10,7 @@ from markdown_post import markdown_post
 import requests
 
 
-remote_url = 'http://localhost:8000/api/v1/posts/'
+remote_url = 'http://maplewish.cn:8100/api/v1/posts/'
 
 # META_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)')
 
@@ -19,11 +19,13 @@ def upload_file(file_path: str):
     print(f'filename: {file_path}')
     token = os.environ.get('token')
     post_data = markdown_post(file_path)
+    print(post_data['created_time'])
     result = requests.post(remote_url, data=json.dumps(post_data), headers={
         'Authorization': f'token {token}',
         'Content-Type': 'application/json'
     })
-    # print(f'upload {title} done: {result}')
+    print(f'upload done: {result}')
+    print(result.content)
 
 
 if __name__ == '__main__':

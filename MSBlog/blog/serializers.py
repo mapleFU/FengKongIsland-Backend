@@ -87,7 +87,7 @@ class TagSerializer(serializers.ModelSerializer):
 #         fields = ('title', 'author', 'reading', 'tags', 'content')
 class PostListSerialize(serializers.ModelSerializer):
     tags = TagSerializer(many=True, read_only=True)
-    # tags_id = serializers.UUIDField(write_only=True)
+    created_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", required=False)
 
     class Meta:
         model = Post
@@ -95,6 +95,8 @@ class PostListSerialize(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
+    created_time = serializers.DateTimeField(required=True)
+
     class Meta:
         model = Post
         fields = ('title', 'author', 'reading', 'tags', 'content', 'abstract', 'created_time', 'saved_time', 'uuid')
@@ -102,6 +104,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 class PostViewSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, read_only=True)
+    # created_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", required=False)
 
     class Meta:
         model = Post
