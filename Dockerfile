@@ -10,8 +10,8 @@ COPY . code
 WORKDIR code
 
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pipenv && \
-    pipenv run pip install pip==18.0 && \
-    pipenv install --system --deploy --ignore-pipfile
+    pipenv run pip install pip==18.0
+RUN pipenv install --system --deploy --ignore-pipfile --skip-lock
 
 
 EXPOSE 8000
