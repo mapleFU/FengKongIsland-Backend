@@ -51,9 +51,10 @@ class PostViewSet(viewsets.ModelViewSet):
         request.data['author'] = usr.id
         tag_names = request.data['tags']
         tag_ids = []
-        print(request.data)
+        print(request.data['created_time'])
         if 'abstract' not in request.data:
-            request.data['abstract'] = request.data['content'][:50]
+            request.data['abstract'] = request.data['content'][:150]
+
         for tag_name in tag_names:
             # cur_tag = get_object_or_404(Tag.objects, tag_name=tag_name)
             try:
@@ -69,7 +70,7 @@ class PostViewSet(viewsets.ModelViewSet):
             cur_tag.save()
             tag_ids.append(cur_tag.pk)
         request.data['tags'] = tag_ids
-
+        print("After all...")
         return super(PostViewSet, self).create(request, *args, **kwargs)
 
     def get_serializer_class(self):

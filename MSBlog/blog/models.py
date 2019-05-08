@@ -1,4 +1,5 @@
 import uuid
+import datetime
 
 from django.db import models
 
@@ -8,9 +9,9 @@ from ..users.models import User
 # Create your models here.
 class TimeStampModel(models.Model):
     # 创建的时间
-    created_time = models.DateField(auto_now_add=True)
+    created_time = models.DateTimeField(default=datetime.datetime.now)
     # 保存的时间
-    saved_time = models.DateField(auto_now=True)
+    saved_time = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract = True
@@ -42,7 +43,7 @@ class Post(TimeStampModel):
     # 标签(已有)
 
     # abstract, 文章的摘要
-    abstract = models.CharField(max_length=100, null=True, editable=True)
+    abstract = models.CharField(max_length=200, null=True, editable=True)
 
 
 class Comment(models.Model):

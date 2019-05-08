@@ -1,6 +1,7 @@
 import os
 import re
 from concurrent import futures
+import types
 
 import markdown2
 
@@ -21,14 +22,17 @@ def markdown_post(file_path: str):
         file_content = f.read()
 
     title = filename_without_ext(path_leaf(file_path))
-    mkd = markdown2.markdown(file_content, extras=['metadata'])
-    meta = mkd.metadata
+    meta = markdown2.markdown(file_content, extras=['metadata']).metadata
     # print(RE.sub('', file_content))
     # print(file_content)
+    if type(meta['tags']) != type([]):
+        meta['tags'] = [meta['tags']]
+
     post_data = {
         'title': meta['title'],
         'content': RE.sub('', file_content),
-        'tags': meta['tags'].split(' '),
+        'tags': meta['tags'],
+        # 'created_time': meta['date'],
     }
 
     if 'date' in meta:
