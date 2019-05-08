@@ -1,5 +1,5 @@
 #!/usr/local/bin/python3
-
+import os
 import argparse
 import re
 from concurrent import futures
@@ -26,6 +26,7 @@ def process_file(file_name: str) -> bool:
         raise Exception(f"file {file_name} is not a .md file.")
     # get path leaf
     file_name_without_path = filename_without_ext(path_leaf(file_name))
+    dir_path = os.path.dirname(file_name)
     new_text = ''
     cnt_line, image_cnt = 0, 0
     with open(file_name, encoding='utf-8', mode='r') as f:
@@ -42,8 +43,12 @@ def process_file(file_name: str) -> bool:
                     # new_file_name = f'blog:{file_name_without_path}:{path_leaf(image_link)}'
                     f_name = file_name.replace(' ', '-')
                     f_leaf = path_leaf(image_link).replace(' ', '-')
-                    new_file_name = f'blog:{file_name}:{path_leaf(image_link)}'
-                    upload(new_file_name, image_link)
+                    new_file_name = f'blog:{f_name}:{f_leaf}'
+                    image_abs_link = image_link
+                    if 'www' not in image_link and not 'http' in image_link:
+                        # a local file
+                        image_abs_link = os.path.join(dir_path, image_link)
+                    upload(new_file_name, image_abs_link)
 
                     line = line.replace(image_link, "https://nmsl.maplewish.cn/" + new_file_name)
             new_text = new_text + line

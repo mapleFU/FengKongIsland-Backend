@@ -34,6 +34,8 @@ class Local(Common):
         )
     }
 
+    # set it true while dev
+    CORS_ORIGIN_ALLOW_ALL = True
     # local debug list
     CORS_ORIGIN_WHITELIST = Common.CORS_ORIGIN_WHITELIST + (
         'localhost:8081',

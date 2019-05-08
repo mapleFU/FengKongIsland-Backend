@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 import os
 import sys
+from pathlib import Path  # python3 only
+
+from dotenv import load_dotenv, find_dotenv
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "MSBlog.config")
     os.environ.setdefault("DJANGO_CONFIGURATION", "Local")
+    env_path = Path('.') / '.env'
+    load_dotenv(find_dotenv())
 
     try:
         from configurations.management import execute_from_command_line

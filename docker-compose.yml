@@ -9,7 +9,7 @@ services:
       - DJANGO_CONFIGURATION=Production
       - DJANGO_SETTINGS_MODULE=MSBlog.config
     env_file:
-      - deploy.env
+      - .env
     image: web
     build: .
     command: >
